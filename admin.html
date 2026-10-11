@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Local editor | Sabin Sijapati</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="editor-shell"><a href="index.html">← Back to portfolio</a><h1>Portfolio studio</h1>
+<p class="notice"><strong>Local demo — no real login yet.</strong> Changes stay in this browser. This is not password protection and does not publish changes for visitors.</p>
+<section id="login"><h2>Admin preview</h2><p>Explore the editing dashboard without an account. Secure sign-in will be connected before online admin editing is enabled.</p><button id="enter" type="button">Enter local demo</button></section>
+<p id="status" role="status" aria-live="polite"></p>
+<form id="editor" hidden>
+<section><h2>Welcome & about</h2>
+<label>Name<input name="name" required maxlength="100"></label>
+<label>Tagline<input name="tagline" required maxlength="240"></label>
+<label>About me<textarea name="about" required maxlength="4000"></textarea></label>
+<label>Skills (separate with commas)<input name="skills" maxlength="800"></label>
+<label>Welcome background photo<input id="photo" type="file" accept="image/jpeg,image/png,image/webp"></label>
+<p>Choose a JPG, PNG, or WebP up to 2 MB. The edited lakeside photo is used until you choose another photo.</p><button class="secondary" id="remove-photo" type="button">Use original welcome photo</button>
+</section>
+<section><h2>Contact</h2><label>Email<input type="email" name="email" required></label><label>GitHub URL<input type="url" name="github" required></label><label>LinkedIn URL<input type="url" name="linkedin" required></label></section>
+<section><h2>Projects</h2><div id="project-fields"></div></section>
+<button type="submit">Save local changes</button><button id="preview" type="button" class="secondary">View portfolio</button><button id="export" type="button" class="secondary">Export backup</button><button id="exit" type="button" class="secondary">Exit demo</button>
+<p>Save first, then preview. Use Export backup to keep a JSON copy of your saved text and background photo.</p>
+</form></main><script src="portfolio.js"></script></body></html>

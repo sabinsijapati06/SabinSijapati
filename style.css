@@ -1,224 +1,94 @@
-/* Include padding and borders in element widths */
-* {
-box-sizing: border-box;
-}
-
-html {
-scroll-behavior: smooth;
-}
-
-/* Overall page appearance */
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: #f3f6fb;
-color: #1e293b;
-line-height: 1.7;
-}
-
-/* Introduction area */
-header {
-background-color: #0f172a;
-color: white;
-text-align: center;
-padding: 70px 20px;
-}
-
-h1 {
-margin: 0 0 12px;
-font-size: 44px;
-line-height: 1.2;
-}
-
-header p {
-color: #cbd5e1;
-}
-
-/* Navigation links */
-nav {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 24px;
-margin-top: 28px;
-}
-
-nav a {
-color: #93c5fd;
-text-decoration: none;
-font-weight: bold;
-}
-
-nav a:hover {
-color: white;
-text-decoration: underline;
-}
-
-a:focus-visible {
-outline: 3px solid #60a5fa;
-outline-offset: 5px;
-}
-
-/* Keep the content centered */
-main {
-max-width: 900px;
-margin: 40px auto;
-padding: 0 20px;
-}
-
-/* Section cards */
-section {
-background-color: white;
-padding: 32px;
-margin-bottom: 24px;
-border-radius: 16px;
-box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
-scroll-margin-top: 24px;
-}
-
-h2 {
-margin-top: 0;
-color: #1d4ed8;
-font-size: 28px;
-}
-
-h3 {
-margin-top: 0;
-}
-
-/* Project box */
-article {
-background-color: #eff6ff;
-border-left: 4px solid #2563eb;
-padding: 24px;
-border-radius: 8px;
-}
-
-footer {
-text-align: center;
-padding: 24px 20px;
-color: #64748b;
-}
-
-/* Adjust the layout for smaller screens */
-@media (max-width: 600px) {
-header {
-    padding: 48px 20px;
-}
-
-h1 {
-    font-size: 34px;
-}
-
-section {
-    padding: 24px;
-}
-
-article {
-    padding: 18px;
-}
-}
-
-/* Respect reduced-motion preferences */
-@media (prefers-reduced-motion: reduce) {
-html {
-    scroll-behavior: auto;
-}
-}
-
-/* Skills displayed as small badges */
-.skills-list {
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-list-style: none;
-padding: 0;
-}
-
-.skills-list li {
-background-color: #dbeafe;
-color: #103bbd;
-padding: 8px 16px;
-border-radius: 20px;
-font-weight: bold;
-}
-
-/* Contact links styled as buttons */
-.contact-links {
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-}
-
-.contact-links a {
-display: inline-block;
-background-color: #1d4ed8;
-color: white;
-padding: 10px 20px;
-border-radius: 8px;
-text-decoration: none;
-font-weight: bold;
-}
-
-.contact-links a:hover {
-background-color: #1e40af;
-}
-
-article + article {
-margin-top: 24px;
-}
-
-.project-image {
-display: block;
-width: 100%;
-max-width: 550px;
-height: auto;
-margin: 20px auto;
-border: 1px solid #cbd5e1;
-border-radius: 10px;
-}
-/* Welcome page and local editor */
-:root { --accent: #b8f28b; }
-.welcome { min-height: 100svh; padding: 28px max(24px, calc((100vw - 1120px)/2)); display:flex; flex-direction:column; justify-content:space-between; text-align:left; background:radial-gradient(ellipse at 80% 20%, #234d56 0, transparent 50%),linear-gradient(130deg,#0b1525,#152f38); background-size:cover; background-position:center; }
-.topbar { display:flex; justify-content:space-between; align-items:center; gap:20px; }
-.brand { font-size:24px; font-weight:800; color:white; text-decoration:none; }
-.brand span { font-size:11px; letter-spacing:2px; color:#cbd5e1; }
-.admin-link { color:white; padding:8px 18px; border:1px solid #78919c; border-radius:30px; text-decoration:none; }
-.welcome-copy { padding:90px 0 35px; max-width:850px; }
-.welcome .eyebrow { font-size:12px; color:var(--accent); letter-spacing:4px; font-weight:bold; }
-.welcome h1 { font-size:clamp(48px,9vw,104px); letter-spacing:-3px; line-height:1.04; overflow-wrap:anywhere; }
-.welcome-copy > p:not(.eyebrow) { font-size:clamp(17px,2vw,22px); max-width:600px; }
-.explore { display:inline-flex; gap:35px; background:var(--accent); color:#11231a; padding:14px 22px; border-radius:6px; font-weight:bold; text-decoration:none; margin-top:22px; }
-.welcome nav { justify-content:flex-start; margin-top:30px; }
-.scroll-note { font-size:12px; padding-top:30px; }
-.editor-shell { max-width:800px; margin:40px auto; padding:0 20px; }
+/* Sabin's portfolio — midnight, teal and soft green */
+:root { color-scheme:dark; --bg:#0b121b; --panel:#121f2b; --edge:#2c404d; --text:#edf4f5; --muted:#b7c6cf; --accent:#b8f28b; }
+* { box-sizing:border-box; }
+html { scroll-behavior:auto; }
+body { margin:0; min-height:100dvh; display:flex; flex-direction:column; font-family:Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+a { color:var(--accent); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
+[hidden] { display:none !important; }
+h1,h2,h3,h4 { line-height:1.2; }
+h1,h2,h3 { margin-top:0; }
+h2 { color:var(--accent); font-size:28px; }
+h3 { font-size:22px; color:var(--text); }
+p { color:var(--muted); }
+/* Welcome: the only view with scrolling locked */
+body.is-welcome { height:100dvh; min-height:0; overflow:hidden; }
+.welcome { flex:1; min-height:0; display:flex; flex-direction:column; justify-content:space-between; padding:26px max(24px,calc((100vw - 1120px)/2)); overflow:hidden; color:white; background-color:#10202d; background-image:linear-gradient(90deg,rgba(5,15,25,.88),rgba(5,15,25,.58) 48%,rgba(5,15,25,.15)),url("images/welcome-lake.png"); background-size:cover; background-position:center bottom; }
+.topbar { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.brand { font-size:24px; font-weight:bold; text-decoration:none; color:white; }
+.brand span { font-size:11px; letter-spacing:2px; color:#c6d4db; }
+.admin-link { color:white; border:1px solid #82979f; border-radius:24px; padding:7px 18px; text-decoration:none; }
+.welcome-copy { max-width:650px; padding:clamp(12px,5vh,60px) 0 10px; }
+.eyebrow { color:var(--accent); font-size:12px; font-weight:bold; letter-spacing:4px; }
+.welcome h1 { font-size:clamp(40px,7vw,94px); letter-spacing:-3px; line-height:1.04; margin:0 0 18px; overflow-wrap:anywhere; }
+.welcome-copy > p:not(.eyebrow) { color:#e0e8ed; font-size:clamp(16px,2vw,22px); max-width:550px; }
+.explore { display:inline-flex; gap:28px; background:var(--accent); color:#12251a; padding:13px 22px; border-radius:7px; font-weight:bold; text-decoration:none; margin-top:16px; }
+.explore:hover { background:#d3ffb3; }
+nav { display:flex; gap:22px; flex-wrap:wrap; }
+nav a { color:#e0e8ed; text-decoration:none; font-weight:bold; }
+nav a:hover, nav a[aria-current="page"] { color:var(--accent); text-decoration:underline; text-underline-offset:6px; }
+.welcome nav { margin-top:12px; }
+.scroll-note { font-size:12px; color:#d0dce3; margin:10px 0 0; }
+/* Content views */
+.page-topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding:22px max(24px,calc((100vw - 1120px)/2)); background:#10202d; border-bottom:1px solid var(--edge); }
+.page-topbar nav { gap:18px; font-size:14px; }
+main { width:100%; max-width:960px; margin:44px auto; padding:0 24px; flex:1; }
+#view-title { color:white; font-size:clamp(30px,4vw,44px); margin-bottom:28px; }
+main section { background:var(--panel); border:1px solid var(--edge); border-radius:16px; padding:32px; margin-bottom:24px; }
+article { padding:26px; background:#172936; border:1px solid #304751; border-left:3px solid #91c77f; border-radius:10px; }
+article + article { margin-top:22px; }
+article p:last-child { margin-bottom:0; }
+article li { color:var(--muted); }
+article strong { color:#e4efed; }
+.skills-list { display:flex; flex-wrap:wrap; gap:12px; list-style:none; padding:0; }
+.skills-list li { background:#213e3a; color:#c9f4b5; padding:8px 17px; border:1px solid #3e6150; border-radius:24px; font-weight:bold; }
+.project-image { display:block; width:100%; max-width:550px; height:auto; margin:20px auto; border:1px solid #536d79; border-radius:10px; }
+/* Contact is its own final navigation page, not a footer. */
+.contact-page { flex:1; width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:70px 24px 24px; text-align:center; background:radial-gradient(ellipse at 80% 20%,#234d56,transparent 55%),linear-gradient(130deg,#0b1525,#152f38); }
+.contact-content { max-width:650px; width:100%; margin:auto; }
+.contact-page h2 { color:white; font-size:clamp(40px,7vw,76px); margin:20px 0; }
+.contact-description { font-size:18px; }
+.social-links { display:flex; justify-content:center; flex-wrap:wrap; gap:18px; margin:32px 0 22px; }
+.social-links a { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; width:110px; min-height:108px; border:1px solid #648b89; background:rgba(255,255,255,.04); border-radius:14px; text-decoration:none; color:var(--accent); }
+.social-links svg { width:28px; height:28px; }
+.social-links span { font-size:13px; font-weight:bold; }
+.social-links a:hover { background:var(--accent); color:#10202d; }
+.contact-handle { font-size:14px; }
+.copyright { margin:44px 0 0; font-size:12px; color:#acbdc7; }
+/* Local demo dashboard */
+.editor-shell { max-width:800px; }
 .editor-shell h1 { font-size:36px; }
 .editor-shell label { display:block; font-weight:bold; margin-top:18px; }
-.editor-shell input, .editor-shell textarea { display:block; width:100%; padding:12px; margin-top:6px; font:inherit; border:1px solid #94a3b8; border-radius:6px; background:white; color:#1e293b; }
+.editor-shell input,.editor-shell textarea { display:block; width:100%; padding:12px; margin-top:6px; font:inherit; border:1px solid #607b87; border-radius:6px; background:#0d1923; color:white; }
 .editor-shell textarea { min-height:100px; resize:vertical; }
-.editor-shell button { cursor:pointer; font:inherit; border:0; border-radius:6px; padding:12px 18px; background:#1d4ed8; color:white; margin:12px 8px 0 0; }
-.editor-shell button.secondary { background:#334155; }
-.editor-shell .notice { padding:16px; background:#fff7dc; border-left:4px solid #c58b00; }
-.editor-shell fieldset { border:1px solid #cbd5e1; border-radius:8px; padding:18px; margin:22px 0; }
+.editor-shell button { cursor:pointer; font:inherit; font-weight:bold; border:0; border-radius:6px; padding:12px 18px; background:var(--accent); color:#12251a; margin:12px 8px 0 0; }
+.editor-shell button.secondary { background:#304854; color:white; }
+.editor-shell button:disabled { opacity:.5; cursor:not-allowed; }
+.editor-shell .notice { padding:16px; background:#342d1c; color:#f1dbac; border-left:4px solid #d7b968; }
+.editor-shell fieldset { border:1px solid #425e6a; border-radius:8px; padding:18px; margin:22px 0; }
 .editor-shell legend { font-weight:bold; }
-[hidden] { display:none !important; }
-#status { min-height:28px; }
-@media(max-width:600px) { .welcome-copy {padding-top:60px;} .welcome h1 {letter-spacing:-2px;} }
-
-/* Edited lakeside welcome photograph */
-.welcome {
-  background-color: #10202d;
-  background-image: linear-gradient(90deg, rgba(5,15,25,.83) 0%, rgba(5,15,25,.57) 45%, rgba(5,15,25,.12) 100%), url("images/welcome-lake.png");
-  background-position: center, center bottom;
-  background-size: cover;
+#status { min-height:28px; color:var(--accent); }
+@media(max-width:600px) {
+  .welcome { padding:20px; background-position:73% bottom; background-image:linear-gradient(180deg,rgba(5,15,25,.8),rgba(5,15,25,.6) 48%,rgba(5,15,25,.24) 76%,rgba(5,15,25,.78)),url("images/welcome-lake.png"); }
+  .welcome h1 { letter-spacing:-2px; }
+  .welcome-copy { padding:20px 0; }
+  .welcome nav { gap:16px; }
+  .scroll-note { display:none; }
+  .page-topbar { padding:18px 20px; }
+  .page-topbar nav { gap:10px 16px; }
+  main { padding:0 18px; margin:28px auto; }
+  main section { padding:22px; }
+  article { padding:20px; }
+  .contact-page { padding-top:44px; }
+  .social-links { gap:12px; }
+  .social-links a { width:100px; }
 }
-.welcome-copy { max-width: 660px; }
-.welcome h1 { font-size: clamp(48px, 7.4vw, 94px); }
-.welcome nav a, .welcome .scroll-note { color:#eef4f8; }
-@media (max-width: 600px) {
-  .welcome {
-    background-position: center, 73% bottom;
-    background-image: linear-gradient(180deg, rgba(5,15,25,.76) 0%, rgba(5,15,25,.58) 48%, rgba(5,15,25,.24) 76%, rgba(5,15,25,.72) 100%), url("images/welcome-lake.png");
-  }
-  .welcome-copy { padding-top: 40px; }
+@media(max-height:620px) {
+  .welcome { padding-top:10px; padding-bottom:10px; }
+  .welcome-copy { padding:5px 0; }
+  .welcome h1 { font-size:clamp(28px,7vh,48px); letter-spacing:-1px; margin-bottom:8px; }
+  .welcome-copy p { margin:6px 0; }
+  .welcome-copy > p:not(.eyebrow) { font-size:14px; }
+  .explore { margin-top:6px; padding:8px 14px; }
+  .scroll-note { display:none; }
 }

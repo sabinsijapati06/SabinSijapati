@@ -17,6 +17,8 @@ if (localDemo) {
 const editor = document.getElementById('editor');
 if (!editor) {
   document.querySelector('h1').textContent = data.name;
+  const footerName = document.querySelector('.footer-name');
+  if (footerName) footerName.textContent = data.name;
   document.querySelector('.welcome-copy > p:not(.eyebrow)').textContent = data.tagline;
   document.querySelector('#about p').textContent = data.about;
   const skills = document.querySelector('.skills-list'); skills.replaceChildren();
@@ -67,3 +69,9 @@ if (!editor) {
   document.getElementById('preview').onclick=()=>location.href='index.html';
   document.getElementById('export').onclick=()=>{ const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})); const a=document.createElement('a'); a.href=url;a.download='portfolio-content-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);say('Exported the last saved content.'); };
 }
+
+// An optional screenshot can be added later without showing a broken image.
+document.querySelectorAll('.project-image').forEach(image => {
+  image.addEventListener('error', () => { image.hidden = true; });
+  if (image.complete && !image.naturalWidth) image.hidden = true;
+});
