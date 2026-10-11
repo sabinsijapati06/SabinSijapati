@@ -177,3 +177,48 @@ margin: 20px auto;
 border: 1px solid #cbd5e1;
 border-radius: 10px;
 }
+/* Welcome page and local editor */
+:root { --accent: #b8f28b; }
+.welcome { min-height: 100svh; padding: 28px max(24px, calc((100vw - 1120px)/2)); display:flex; flex-direction:column; justify-content:space-between; text-align:left; background:radial-gradient(ellipse at 80% 20%, #234d56 0, transparent 50%),linear-gradient(130deg,#0b1525,#152f38); background-size:cover; background-position:center; }
+.topbar { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.brand { font-size:24px; font-weight:800; color:white; text-decoration:none; }
+.brand span { font-size:11px; letter-spacing:2px; color:#cbd5e1; }
+.admin-link { color:white; padding:8px 18px; border:1px solid #78919c; border-radius:30px; text-decoration:none; }
+.welcome-copy { padding:90px 0 35px; max-width:850px; }
+.welcome .eyebrow { font-size:12px; color:var(--accent); letter-spacing:4px; font-weight:bold; }
+.welcome h1 { font-size:clamp(48px,9vw,104px); letter-spacing:-3px; line-height:1.04; overflow-wrap:anywhere; }
+.welcome-copy > p:not(.eyebrow) { font-size:clamp(17px,2vw,22px); max-width:600px; }
+.explore { display:inline-flex; gap:35px; background:var(--accent); color:#11231a; padding:14px 22px; border-radius:6px; font-weight:bold; text-decoration:none; margin-top:22px; }
+.welcome nav { justify-content:flex-start; margin-top:30px; }
+.scroll-note { font-size:12px; padding-top:30px; }
+.editor-shell { max-width:800px; margin:40px auto; padding:0 20px; }
+.editor-shell h1 { font-size:36px; }
+.editor-shell label { display:block; font-weight:bold; margin-top:18px; }
+.editor-shell input, .editor-shell textarea { display:block; width:100%; padding:12px; margin-top:6px; font:inherit; border:1px solid #94a3b8; border-radius:6px; background:white; color:#1e293b; }
+.editor-shell textarea { min-height:100px; resize:vertical; }
+.editor-shell button { cursor:pointer; font:inherit; border:0; border-radius:6px; padding:12px 18px; background:#1d4ed8; color:white; margin:12px 8px 0 0; }
+.editor-shell button.secondary { background:#334155; }
+.editor-shell .notice { padding:16px; background:#fff7dc; border-left:4px solid #c58b00; }
+.editor-shell fieldset { border:1px solid #cbd5e1; border-radius:8px; padding:18px; margin:22px 0; }
+.editor-shell legend { font-weight:bold; }
+[hidden] { display:none !important; }
+#status { min-height:28px; }
+@media(max-width:600px) { .welcome-copy {padding-top:60px;} .welcome h1 {letter-spacing:-2px;} }
+
+/* Edited lakeside welcome photograph */
+.welcome {
+  background-color: #10202d;
+  background-image: linear-gradient(90deg, rgba(5,15,25,.83) 0%, rgba(5,15,25,.57) 45%, rgba(5,15,25,.12) 100%), url("images/welcome-lake.png");
+  background-position: center, center bottom;
+  background-size: cover;
+}
+.welcome-copy { max-width: 660px; }
+.welcome h1 { font-size: clamp(48px, 7.4vw, 94px); }
+.welcome nav a, .welcome .scroll-note { color:#eef4f8; }
+@media (max-width: 600px) {
+  .welcome {
+    background-position: center, 73% bottom;
+    background-image: linear-gradient(180deg, rgba(5,15,25,.76) 0%, rgba(5,15,25,.58) 48%, rgba(5,15,25,.24) 76%, rgba(5,15,25,.72) 100%), url("images/welcome-lake.png");
+  }
+  .welcome-copy { padding-top: 40px; }
+}
