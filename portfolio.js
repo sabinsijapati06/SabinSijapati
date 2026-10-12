@@ -22,7 +22,7 @@ if (!editor) {
   document.querySelector('.welcome-copy > p:not(.eyebrow)').textContent = data.tagline;
   document.querySelector('#about p').textContent = data.about;
   const skills = document.querySelector('.skills-list'); skills.replaceChildren();
-  data.skills.split(',').map(s=>s.trim()).filter(Boolean).forEach(s=>{ const li=document.createElement('li'); li.textContent=s; skills.append(li); });
+  data.skills.split(',').map(s=>s.trim()).filter(Boolean).forEach(s=>{ const li=document.createElement('li'); const link=document.createElement('a'); link.textContent=s; link.href='#projects?skill='+encodeURIComponent(s); li.append(link); skills.append(li); });
   document.querySelectorAll('#projects article').forEach((a,i)=>{
     a.querySelector('h3').textContent=data.projects[i].title;
     a.querySelector('p').textContent=data.projects[i].description;

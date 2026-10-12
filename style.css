@@ -1,8 +1,26 @@
 /* Sabin's portfolio — midnight, teal and soft green */
-:root { color-scheme:dark; --bg:#0b121b; --panel:#121f2b; --edge:#2c404d; --text:#edf4f5; --muted:#b7c6cf; --accent:#b8f28b; }
-* { box-sizing:border-box; }
-html { scroll-behavior:auto; }
-body { margin:0; min-height:100dvh; display:flex; flex-direction:column; font-family:Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+:root { color-scheme:dark; 
+--bg:#0b121b; 
+--panel:#121f2b; 
+--edge:#2c404d; 
+--text:#edf4f5;
+--muted:#b7c6cf;
+--accent:#b8f28b;
+}
+* { box-sizing:border-box; 
+}
+html { scroll-behavior:auto; 
+}
+body { 
+  margin:0;
+min-height:100dvh;
+display:flex;
+flex-direction:column;
+font-family:Arial,sans-serif; 
+background:var(--bg); 
+color:var(--text); 
+line-height:1.7; 
+}
 a { color:var(--accent); }
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
 [hidden] { display:none !important; }
@@ -91,4 +109,31 @@ article strong { color:#e4efed; }
   .welcome-copy > p:not(.eyebrow) { font-size:14px; }
   .explore { margin-top:6px; padding:8px 14px; }
   .scroll-note { display:none; }
+}
+
+
+/* Charcoal content; original welcome palette is preserved. */
+body:not(.is-welcome) { --bg:#090909; --panel:#141414; --edge:#383838; --text:#f5f5f5; --muted:#bdbdbd; }
+.page-topbar { background:#101010; }
+#portfolio-content { --accent:#f4f4f4; }
+#portfolio-content article { background:#1e1e1e; border-color:#444; border-left-color:#aaa; }
+#portfolio-content article strong { color:#eee; }
+.page-topbar nav a { color:#eee; }
+.page-topbar .brand span { color:#bbb; }
+.skills-list li { background:none; border:0; padding:0; color:#eee; }
+.skills-list a { display:block; padding:8px 17px; border:1px solid #666; border-radius:24px; color:#eee; text-decoration:none; transition:background .25s,color .25s; }
+.skills-list a:hover,.skills-list a:focus-visible { background:#eee; color:#111; }
+.project-filter { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; margin-bottom:22px; }
+.contact-page { background:radial-gradient(ellipse at 80% 20%,rgba(184,242,139,.08),transparent 55%),linear-gradient(130deg,#090909,#242424); min-height:65vh; border-top:1px solid #383838; }
+.contact-page h2,.contact-page .eyebrow { color:#b8f28b; }
+.contact-page p { color:#c0c7bc; }
+.social-links a { color:#b8f28b; border-color:#53634a; }
+.social-links a:hover,.social-links a:focus-visible { background:#b8f28b; color:#12251a; }
+.roll-mask { display:block; position:relative; overflow:hidden; line-height:1.5; }
+.roll-label { display:block; transition:transform .38s cubic-bezier(.22,.68,0,1.1); }
+.roll-label + .roll-label { position:absolute; top:100%; left:0; width:100%; }
+.roll-link:hover .roll-label,.roll-link:focus-visible .roll-label { transform:translateY(-100%); }
+@media(prefers-reduced-motion:reduce) {
+ .roll-label,.skills-list a { transition:none; }
+ .roll-link:hover .roll-label,.roll-link:focus-visible .roll-label { transform:none; }
 }
