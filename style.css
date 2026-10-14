@@ -1,26 +1,8 @@
 /* Sabin's portfolio — midnight, teal and soft green */
-:root { color-scheme:dark; 
---bg:#0b121b; 
---panel:#121f2b; 
---edge:#2c404d; 
---text:#edf4f5;
---muted:#b7c6cf;
---accent:#b8f28b;
-}
-* { box-sizing:border-box; 
-}
-html { scroll-behavior:auto; 
-}
-body { 
-  margin:0;
-min-height:100dvh;
-display:flex;
-flex-direction:column;
-font-family:Arial,sans-serif; 
-background:var(--bg); 
-color:var(--text); 
-line-height:1.7; 
-}
+:root { color-scheme:dark; --bg:#0b121b; --panel:#121f2b; --edge:#2c404d; --text:#edf4f5; --muted:#b7c6cf; --accent:#b8f28b; }
+* { box-sizing:border-box; }
+html { scroll-behavior:auto; }
+body { margin:0; min-height:100dvh; display:flex; flex-direction:column; font-family:Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
 a { color:var(--accent); }
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
 [hidden] { display:none !important; }
@@ -136,4 +118,67 @@ body:not(.is-welcome) { --bg:#090909; --panel:#141414; --edge:#383838; --text:#f
 @media(prefers-reduced-motion:reduce) {
  .roll-label,.skills-list a { transition:none; }
  .roll-link:hover .roll-label,.roll-link:focus-visible .roll-label { transform:none; }
+}
+
+.project-type { text-transform:uppercase; font-size:12px; letter-spacing:2px; }
+details { margin:20px 0; } summary { cursor:pointer; } summary:focus-visible { outline:2px solid white; outline-offset:4px; }
+.project-source { display:inline-block; padding:10px 18px; border:1px solid #666; border-radius:24px; text-decoration:none; margin-top:12px; }
+
+/* Right-side navigation drawer; native dialog keeps keyboard focus inside. */
+.menu-button {
+ color:white; background:transparent; border:1px solid #82979f;
+ border-radius:24px; padding:7px 22px; font:inherit; line-height:1.7;
+ cursor:pointer; min-height:44px; margin-left:auto;
+}
+.menu-button:hover { border-color:#b8f28b; color:#b8f28b; }
+body.menu-is-open { overflow:hidden; }
+#site-menu {
+ position:fixed; inset:0 0 0 auto; margin:0; padding:32px;
+ width:min(390px,90vw); height:100dvh; max-height:100dvh; max-width:100vw;
+ color:#f5f5f5; background:rgba(20,24,21,.82);
+ border:0; border-left:1px solid rgba(184,242,139,.22);
+ box-shadow:-20px 0 70px rgba(0,0,0,.35);
+ -webkit-backdrop-filter:blur(22px); backdrop-filter:blur(22px);
+ overflow-y:auto;
+}
+#site-menu[open] { animation:menu-enter .3s ease-out; }
+#site-menu::backdrop { background:rgba(0,0,0,.45); }
+.menu-heading { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:42px; }
+.menu-heading h2 { margin:0; font-size:18px; color:#b8f28b; letter-spacing:2px; }
+.menu-close { border:1px solid #63715b; border-radius:50%; width:44px; height:44px; color:white; background:transparent; font-size:28px; cursor:pointer; }
+#site-menu nav { display:flex; flex-direction:column; flex-wrap:nowrap; gap:12px; }
+#site-menu nav a { display:block; font-size:26px; font-weight:400; padding:12px 8px; color:#eee; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.08); }
+#site-menu nav a:hover,#site-menu nav a[aria-current="page"] { color:#b8f28b; }
+@keyframes menu-enter { from {transform:translateX(100%);opacity:0;} to {transform:translateX(0);opacity:1;} }
+@media(prefers-reduced-motion:reduce) { #site-menu[open] { animation:none; } }
+
+/* Section links scroll within the full portfolio. */
+.page-topbar { position:sticky; top:0; z-index:10; }
+#view-title,#about,#skills,#projects,#contact { scroll-margin-top:110px; }
+
+/* Skill logos: retain readable names and filtering, without hover effects. */
+.skills-list a,.skills-list a:hover,.skills-list a:focus-visible {
+ display:flex; align-items:center; gap:10px; background:transparent;
+ color:#eee; border-color:#666; transition:none; transform:none;
+}
+.skill-logo { display:block; width:28px; height:28px; object-fit:contain; flex:none; }
+.skill-logo-github { filter:invert(1); }
+
+/* Flip only the skill name; logos and chip colors remain stationary. */
+.skill-flip { display:inline-block; perspective:500px; }
+.skill-flip-inner {
+ display:grid; transform-style:preserve-3d;
+ transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.skill-flip-front,.skill-flip-back {
+ grid-area:1 / 1; display:block; white-space:nowrap;
+ backface-visibility:hidden; -webkit-backface-visibility:hidden;
+}
+.skill-flip-back { transform:rotateX(180deg); }
+@media(hover:hover) {
+ .skills-list a:hover .skill-flip-inner { transform:rotateX(180deg); }
+}
+.skills-list a:focus-visible .skill-flip-inner { transform:rotateX(180deg); }
+@media(prefers-reduced-motion:reduce) {
+ .skill-flip-inner { transition:none !important; transform:none !important; }
 }

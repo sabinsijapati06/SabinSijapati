@@ -25,8 +25,12 @@
 
 <div class="page-topbar" hidden>
 <a class="brand" href="#welcome">SS<span> / PORTFOLIO</span></a>
-<nav aria-label="Portfolio navigation"><a href="#welcome">Home</a><a href="#portfolio">Overview</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+<button class="menu-button" id="menu-open" type="button" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false">Menu</button>
 </div>
+<dialog id="site-menu" aria-labelledby="menu-title">
+<div class="menu-heading"><h2 id="menu-title">Menu</h2><button id="menu-close" class="menu-close" type="button" aria-label="Close menu">×</button></div>
+<nav aria-label="Portfolio navigation"><a href="#welcome">Home</a><a href="#portfolio">Overview</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+</dialog>
 <main id="portfolio-content" hidden>
 <h2 id="view-title" tabindex="-1">My Portfolio</h2>
     <section id="about">
@@ -56,93 +60,15 @@
 <section id="projects">
 <h2>My Projects</h2><div class="project-filter"><p id="filter-status" role="status"></p><a href="#projects" id="clear-filter" hidden>View all projects ↗</a></div>
 
-<article>
-    <h3>Personal Portfolio Website</h3>
-    <p>
-    A responsive website I’m building to introduce myself,
-    showcase my projects, and connect with others.
-    </p>
+<article id="project-cave-diver"><h3>Cave Diver Pathfinding Visualizer</h3><p>A Java Swing application that generates a random 10 × 10 cave and highlights an escape route within a depth limit.</p><p><strong>Technologies:</strong> Java, Swing, recursion, DSA</p><p class="project-type">Coursework project</p><h4>What it does</h4><p>Searches down and right recursively, checks cell depth, and highlights the successful path.</p><details><summary>Technical discussion</summary><p>Explain the recursive base cases and why the current search only allows two directions.</p></details><a class="project-source" href="projects/cave-diver.zip" download>Download source ↗</a></article>
 
-    <p><strong>Technologies:</strong> HTML and CSS</p>
+<article id="project-birthday-database"><h3>Birthday Database</h3><p>A C++ console application for managing birthday records with a binary search tree.</p><p><strong>Technologies:</strong> C++, binary search trees, file handling, DSA</p><p class="project-type">Coursework project</p><h4>What it does</h4><p>Add, edit, remove, and search records; query birthdays by month; import and export CSV-style records.</p><details><summary>Technical discussion</summary><p>Explain name-based ordering, duplicate handling, and how an unbalanced tree affects search performance.</p></details><a class="project-source" href="projects/birthday-database.zip" download>Download source ↗</a></article>
 
-    <h4>Features</h4>
-    <ul>
-    <li>A layout that adjusts to phone and desktop screens</li>
-    <li>Navigation links that jump to each section</li>
-    <li>Skills badges and contact links</li>
-    </ul>
+<article id="project-graph-traversal"><h3>Graph Representations &amp; Traversal</h3><p>A C++ coursework project comparing adjacency matrices and adjacency lists, with depth-first and breadth-first traversal.</p><p><strong>Technologies:</strong> C++, graphs, BFS, DFS, DSA</p><p class="project-type">Coursework project</p><h4>What it does</h4><p>Demonstrates directed and undirected graphs, weighted and unweighted configurations, and traversal of textbook examples.</p><details><summary>Technical discussion</summary><p>Compare matrix and list storage, and explain how a queue changes BFS traversal compared with recursive DFS.</p></details><a class="project-source" href="projects/graph-traversal.zip" download>Download source ↗</a></article>
 
-    <h4>What I’m learning</h4>
-    <p>
-    How to structure a webpage with HTML, style it with CSS,
-    and use Flexbox and media queries to adapt the layout
-    to different screen sizes.
-    </p>
-</article>
+<article id="project-catacomb-crawler"><h3>Catacomb Crawler</h3><p>A turn-based Java console game with a configurable dungeon, a hero, monsters, and an escape objective.</p><p><strong>Technologies:</strong> Java, OOP, inheritance</p><p class="project-type">Coursework project</p><h4>What it does</h4><p>Uses Actor, Hero, and Monster classes, bounded movement, random combat, healing, and a text-based map.</p><details><summary>Technical discussion</summary><p>Explain the class hierarchy, game-state updates, and the order of combat, health, and escape checks.</p></details><a class="project-source" href="projects/catacomb-crawler.zip" download>Download source ↗</a></article>
 
-<article>
-<h3>Cave Diver Pathfinding Visualizer</h3>
-<img
-class="project-image"
-src="images/cave-diver.png"
-alt="Cave Diver application showing a highlighted escape route"
-loading="lazy"
->
-<p>
-    A Java desktop application that generates a random 10-by-10
-    cave grid and searches for an escape route based on a
-    diver’s depth limit. A successful route is highlighted
-    on the screen.
-</p>
-<p>
-    <strong>Technologies:</strong>
-    Java, Swing, recursion, and two-dimensional arrays
-</p>
-<p>
-    <strong>Algorithm:</strong>
-    Recursively explores paths moving down or right,
-    checking depth and remaining air.
-</p>
-<p><strong>Project type:</strong> Coursework</p>
-</article>
-
-<article>
-<h3>Binary Search Tree Comparison</h3>
-<p>
-    A C++ console application that lets users build two binary
-    search trees and compare their stored values, even when
-    their structures differ.
-</p>
-<p>
-    <strong>Technologies:</strong>
-    C++, binary search trees, templates, and inorder traversal
-</p>
-<p>
-    <strong>Features:</strong>
-    Interactive insertion, sorted output, and example
-    comparisons of equivalent and different trees.
-</p>
-<p><strong>Project type:</strong> Coursework</p>
-</article>
-
-<article>
-<h3>Rainfall Statistics Tracker</h3>
-<p>
-    A C++ console application that stores monthly rainfall
-    records in a linked list. Users can add or edit records
-    and generate a summary report.
-</p>
-<p>
-    <strong>Technologies:</strong>
-    C++, linked lists, classes, and templates
-</p>
-<p>
-    <strong>Features:</strong>
-    Calculates total and average rainfall and identifies
-    the months with the highest and lowest rainfall.
-</p>
-<p><strong>Project type:</strong> Coursework</p>
-</article>
+<article id="project-portfolio"><h3>Personal Portfolio Website</h3><p>A responsive personal website with a photo welcome screen, separate content views, and skill-based project filtering.</p><p><strong>Technologies:</strong> HTML, CSS, JavaScript, GitHub</p><p class="project-type">Personal project</p><h4>What it does</h4><p>Includes rolling hover labels, keyboard focus support, and reduced-motion styling.</p><details><summary>Technical discussion</summary><p>Explore how hash navigation and project filters work together without a backend.</p></details><a class="project-source" href="https://github.com/sabinsijapati06/sabinsijapati06.github.io" target="_blank" rel="noopener noreferrer">View repository ↗</a></article>
 </section>
 
 
