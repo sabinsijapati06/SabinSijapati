@@ -182,3 +182,61 @@ body.menu-is-open { overflow:hidden; }
 @media(prefers-reduced-motion:reduce) {
  .skill-flip-inner { transition:none !important; transform:none !important; }
 }
+
+/* Share Contact's charcoal gradient and soft green glow across the portfolio. */
+body {
+ background:radial-gradient(ellipse at 80% 20%,rgba(184,242,139,.08),transparent 55%),linear-gradient(130deg,#090909,#242424);
+ background-attachment:fixed;
+}
+main section, .contact-page { background:transparent; }
+.page-topbar {
+ background:rgba(9,9,9,.82);
+ -webkit-backdrop-filter:blur(16px);
+ backdrop-filter:blur(16px);
+}
+.contact-page { border-top:0; }
+
+/* Reference-inspired introduction with a reserved hanging portrait card. */
+#about {
+ display:grid; grid-template-columns:minmax(220px,.8fr) minmax(0,1.5fr);
+ align-items:center; gap:54px; padding:36px 0 64px;
+ border:0; border-radius:0; min-height:650px;
+}
+.about-photo-area { position:relative; padding:115px 12px 32px; align-self:stretch; display:flex; align-items:center; }
+.photo-strap { position:absolute; top:-80px; left:54%; width:7px; height:250px; background:#788375; transform:rotate(8deg); border-radius:4px; }
+.photo-badge { position:relative; width:100%; padding:12px; background:#0c1010; border:1px solid #56604f; border-radius:18px; transform:rotate(8deg); box-shadow:0 24px 48px #0006; }
+.photo-clip { position:absolute; top:-25px; left:calc(50% - 12px); width:24px; height:44px; background:#b4bcae; border:6px solid #e0e4dc; border-radius:8px; }
+.photo-placeholder { aspect-ratio:3 / 4; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:18px; background:linear-gradient(145deg,#273028,#151a17); border:1px dashed #66705f; border-radius:8px; color:#b8c3b1; }
+.photo-placeholder > span { font-size:64px; font-weight:bold; letter-spacing:-4px; opacity:.45; }
+.photo-placeholder small { font-size:12px; letter-spacing:1px; }
+.about-spark { position:absolute; bottom:10px; left:-12px; color:#b8f28b; opacity:.5; font-size:56px; }
+.about-copy .eyebrow { color:#b8f28b; }
+#about h2 { color:#fff; font-size:clamp(44px,6vw,72px); margin:12px 0 20px; letter-spacing:-2px; }
+#about .about-intro { color:#b8f28b; font-size:18px; font-weight:bold; }
+.about-copy p { margin:0 0 20px; line-height:1.85; }
+@media(max-width:700px) {
+ #about { grid-template-columns:1fr; gap:28px; padding:0 4px 36px; min-height:0; }
+ .about-photo-area { width:230px; justify-self:center; padding:65px 12px 25px; }
+ .photo-strap { top:-28px; height:125px; }
+ .about-copy { padding-top:8px; }
+}
+
+/* Explore entrance: rise into view, clear the blur, then reveal the copy. */
+@media(prefers-reduced-motion:no-preference) {
+ #about.about-entering { animation:about-rise 1.3s cubic-bezier(.16,1,.3,1) both; }
+ .about-entering .about-copy > * { animation:about-text-reveal 1.05s ease-out both; }
+ .about-entering .about-copy > :nth-child(1) { animation-delay:.3s; }
+ .about-entering .about-copy > :nth-child(2) { animation-delay:.45s; }
+ .about-entering .about-copy > :nth-child(3) { animation-delay:.65s; }
+ .about-entering .about-copy > :nth-child(4) { animation-delay:.85s; }
+ .about-entering .about-copy > :nth-child(5) { animation-delay:1.05s; }
+ .about-entering .about-copy > :nth-child(6) { animation-delay:1.25s; }
+}
+@keyframes about-rise {
+ from { opacity:0; transform:translateY(110px); filter:blur(12px); }
+ to { opacity:1; transform:translateY(0); filter:blur(0); }
+}
+@keyframes about-text-reveal {
+ from { opacity:0; transform:translateY(22px); filter:blur(6px); }
+ to { opacity:1; transform:translateY(0); filter:blur(0); }
+}

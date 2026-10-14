@@ -21,7 +21,7 @@ if (!editor) {
   const footerName = document.querySelector('.footer-name');
   if (footerName) footerName.textContent = data.name;
   document.querySelector('.welcome-copy > p:not(.eyebrow)').textContent = data.tagline;
-  document.querySelector('#about p').textContent = data.about;
+  document.querySelector('#about .about-intro').textContent = data.about;
   const skills = document.querySelector('.skills-list'); skills.replaceChildren();
   data.skills.split(',').map(s=>s.trim()).filter(Boolean).forEach(s=>{ const li=document.createElement('li'); const link=document.createElement('a');
     const iconName=SKILL_ICONS[s.toLowerCase()];
